@@ -21,8 +21,8 @@ public class ProductSearch {
 	@FindBy(xpath = "//span[@class=\"_2I9KP_\"][text()=\"Electronics\"]")
 	private WebElement ElectronicsMenu;
 	
-	@FindBy(xpath = "//a[@title=\"Realme\"]")
-	private WebElement realme;
+	@FindBy(xpath = "//a[@title='Realme']")
+	private WebElement brand;
 
 	public WebElement getClosePopup() {
 		return closePopup;
@@ -36,8 +36,8 @@ public class ProductSearch {
 		return ElectronicsMenu;
 	}
 
-	public WebElement getRealme() {
-		return realme;
+	public WebElement getBrand() {
+		return brand;
 	}
 	
 	

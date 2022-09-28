@@ -21,6 +21,10 @@ public class AddToCartStepDef extends Base{
 	List<WebElement> products;
 	String parent;
 	String productSelected;
+	
+	
+	
+	
 	@When("user clicks the first mobile from the list")
 	public void user_clicks_the_first_mobile_from_the_list() {
 		parent = driver.getWindowHandle();

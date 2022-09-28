@@ -10,3 +10,15 @@ Scenario: Launch the URL & Do a Product search
      And user should get the same product to be displayed that he clicked
      Then user add that product to the cart
     
+ Scenario: Place Order & Login to the application
+     Given user clicks the place order button
+     And user enters the mobile no and clicks the continue button
+     Then user enters the password and login to application
+ 
+ Scenario: Select Address & Select Payment option
+     Given user selects the address 
+     And clicks the deliver here button
+     Then clicks the continue to payment button
+     And clicks the accept and continue button of popup
+     Then selects the card payment option
+     

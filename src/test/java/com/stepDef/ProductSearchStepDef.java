@@ -32,7 +32,7 @@ public class ProductSearchStepDef extends Base{
 
 	@Then("user is navigated to list of realme mobile page")
 	public void user_is_navigated_to_list_of_realme_mobile_page() {
-		click(pom.getProductSearch().getRealme());
+		click(pom.getProductSearch().getBrand());
 			
 		
 	}

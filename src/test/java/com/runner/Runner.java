@@ -14,6 +14,7 @@ import io.cucumber.junit.CucumberOptions;
 		features = "C:\\Users\\sathiya\\eclipse-workspace\\scrum\\Flipkart\\src\\test\\resources\\com\\features",
 		glue = "com.stepDef",
 		monochrome = true,
+		plugin = "pretty",
 		dryRun = false
 		
 		
