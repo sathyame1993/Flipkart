@@ -19,7 +19,7 @@ public class AddToCartStepDef extends Base{
 	
 	PageObjectManager pom = new PageObjectManager();
 	List<WebElement> products;
-	String parent;
+	public static String parent;
 	String productSelected;
 	
 	

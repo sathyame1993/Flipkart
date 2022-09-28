@@ -2,7 +2,6 @@ package com.runner;
 
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.base.Base;

@@ -13,20 +13,13 @@ public class AddressAndPaymentStepDef extends Base{
 	
 	@Given("user selects the address")
 	public void user_selects_the_address() throws InterruptedException {
-//		clickAndHold(pom.getAddressAndPayment().getClicklAndHold());
-//		Thread.sleep(10000);
-//		releaseMouseClick();
-//		click(pom.getAddressAndPayment().getChangeAddress());
-		click(pom.getAddressAndPayment().getSelectAddress());
-	}
-
-	@Given("clicks the deliver here button")
-	public void clicks_the_deliver_here_button() {
+		elementToBeVisible(pom.getAddressAndPayment().getDeliverHere());
 		click(pom.getAddressAndPayment().getDeliverHere());
 	}
 
 	@Then("clicks the continue to payment button")
 	public void clicks_the_continue_to_payment_button() {
+		elementToBeVisible(pom.getAddressAndPayment().getContinueToPayment());
 		scrollDownToElement(pom.getAddressAndPayment().getContinueToPayment());
 		click(pom.getAddressAndPayment().getContinueToPayment());
 	}
@@ -37,7 +30,8 @@ public class AddressAndPaymentStepDef extends Base{
 	}
 
 	@Then("selects the card payment option")
-	public void selects_the_card_payment_option() {
+	public void selects_the_card_payment_option() throws InterruptedException {
+		Thread.sleep(3000);
 		click(pom.getAddressAndPayment().getCardPatmnetOption());
 	}
 

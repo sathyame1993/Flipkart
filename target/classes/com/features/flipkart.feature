@@ -17,7 +17,6 @@ Scenario: Launch the URL & Do a Product search
  
  Scenario: Select Address & Select Payment option
      Given user selects the address 
-     And clicks the deliver here button
      Then clicks the continue to payment button
      And clicks the accept and continue button of popup
      Then selects the card payment option

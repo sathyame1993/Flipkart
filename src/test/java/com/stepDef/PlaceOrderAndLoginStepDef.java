@@ -1,15 +1,15 @@
 package com.stepDef;
-
-
 import com.base.Base;
 import com.sdp.PageObjectManager;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+
+
 
 public class PlaceOrderAndLoginStepDef extends Base{
 	
 	PageObjectManager pom = new PageObjectManager();
+	
 	
 	
 	@Given("user clicks the place order button")
@@ -29,8 +29,6 @@ public class PlaceOrderAndLoginStepDef extends Base{
 		sendKeys(pom.getOrderAndLogin().getPassword(), readPropertyFile().getProperty("password"));
 		System.out.println(driver.getCurrentUrl());
 		click(pom.getOrderAndLogin().getLoginButton());
-		
-		
-		
+
 	}
 }
