@@ -158,7 +158,6 @@ public class Base {
 	
 	public static void getUrl (String URL){
 		driver.get(URL);
-		driver.manage().deleteAllCookies();
 
 	}
 
@@ -180,11 +179,18 @@ public class Base {
 	}
 	
 	public static void scrollDownToElement(WebElement element) {
-		Actions actions = new Actions(driver);
+		actions = new Actions(driver);
 		actions.moveToElement(element);
 	}
 
+	public static void clickAndHold(WebElement element) {
+		actions.clickAndHold(element).build().perform();
+	}
 
+	public static void releaseMouseClick() {
+		actions.release().build().perform();
+	}
+	
 	public static WebDriver close() {
 		driver.close();
 		return driver;

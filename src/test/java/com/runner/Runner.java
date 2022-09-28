@@ -2,6 +2,7 @@ package com.runner;
 
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.base.Base;
@@ -27,7 +28,6 @@ public class Runner extends Base {
 	@BeforeClass
 	public static void setup() {
 		driver = browser_launch(readPropertyFile().getProperty("browser1"));
-		
 	}
 
 }

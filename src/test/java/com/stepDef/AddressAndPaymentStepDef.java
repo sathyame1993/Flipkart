@@ -12,8 +12,11 @@ public class AddressAndPaymentStepDef extends Base{
 	
 	
 	@Given("user selects the address")
-	public void user_selects_the_address() {
-		click(pom.getAddressAndPayment().getChangeAddress());
+	public void user_selects_the_address() throws InterruptedException {
+//		clickAndHold(pom.getAddressAndPayment().getClicklAndHold());
+//		Thread.sleep(10000);
+//		releaseMouseClick();
+//		click(pom.getAddressAndPayment().getChangeAddress());
 		click(pom.getAddressAndPayment().getSelectAddress());
 	}
 
