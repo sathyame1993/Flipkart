@@ -15,7 +15,6 @@ public class ProductSearchStepDef extends Base{
 	@Given("user enter into the flipkart Homepage")
 	public void user_enter_into_the_flipkart_homepage() {
 	getUrl(readPropertyFile().getProperty("url"));
-	pageLoadWait("2");
 	click(pom.getProductSearch().getClosePopup());
 	}
 

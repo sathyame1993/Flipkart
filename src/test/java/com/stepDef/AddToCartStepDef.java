@@ -26,6 +26,7 @@ public class AddToCartStepDef extends Base{
 		parent = driver.getWindowHandle();
 		products = pom.getAddToCart().getProducts();
 			click(products.get(0));
+			System.out.println(products.get(0).getAttribute("data-id"));
 			System.out.println(getTextInWebElement(products.get(0)));
 			productSelected = getTextInWebElement(products.get(0));
 		}
@@ -41,9 +42,8 @@ public class AddToCartStepDef extends Base{
 				driver.switchTo().window(child);
 			}
 		}
-		
-		WebElement element = driver.findElement(By.xpath("//a[@class=\"_2rpwqI\"]"));
-		String productDisplayed = element.getAttribute("title");
+		Thread.sleep(5000);
+		String productDisplayed =pom.getAddToCart().getproductDisplayed().getAttribute("title");
 		System.out.println(productDisplayed);
 		assertEquals(productSelected, productDisplayed);
 		
@@ -51,7 +51,8 @@ public class AddToCartStepDef extends Base{
 
 	@Then("user add that product to the cart")
 	public void user_add_that_product_to_the_cart() {
-		driver.findElement(By.xpath("//button[text()=\"ADD TO CART\"]")).click();
+		click(pom.getAddToCart().getAddToCart());
+		
 
 	}
 }

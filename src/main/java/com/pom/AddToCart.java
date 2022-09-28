@@ -14,13 +14,16 @@ public class AddToCart {
 	@FindBy(xpath = "//div[@class=\"_4rR01T\"]")
 	private List<WebElement> Products;
 	
-	@FindBy(xpath = "//h1[@class=\"yhB1nd\"]")
-	private WebElement selectedProduct;
+	@FindBy(xpath = "//a[@class='_2rpwqI']")
+	private WebElement productDisplayed;
 	
-	@FindBy(xpath = "//div[@class='_2rp71H']")
-	private WebElement productDescription;
+	@FindBy(xpath = "//button[text()='ADD TO CART']")
+	private WebElement addToCart;
 	
-	
+
+	public WebElement getAddToCart() {
+		return addToCart;
+	}
 
 
 	public List<WebElement> getProducts() {
@@ -28,14 +31,10 @@ public class AddToCart {
 	}
 
 
-	public WebElement getSelectedProduct() {
-		return selectedProduct;
+	public WebElement getproductDisplayed() {
+		return productDisplayed;
 	}
 
-
-	public WebElement getProductDescription() {
-		return productDescription;
-	}
 
 
 	public AddToCart(WebDriver driver2) {
