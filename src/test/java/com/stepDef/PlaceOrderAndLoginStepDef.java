@@ -19,7 +19,7 @@ public class PlaceOrderAndLoginStepDef extends Base{
 	@Given("user enters the mobile no and clicks the continue button")
 	public void user_enters_the_mobile_no_and_clicks_the_continue_button() throws InterruptedException {
 		sendKeys(pom.getOrderAndLogin().getMobileNo(), readPropertyFile().getProperty("mobileNo"));
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		click(pom.getOrderAndLogin().getContinueButton());
 	}
 
@@ -27,7 +27,8 @@ public class PlaceOrderAndLoginStepDef extends Base{
 	public void user_enters_the_password_and_login_to_application() throws InterruptedException {
 		elementToBeVisible(pom.getOrderAndLogin().getPassword());
 		sendKeys(pom.getOrderAndLogin().getPassword(), readPropertyFile().getProperty("password"));
-		Thread.sleep(5000);
+		Thread.sleep(2000);
+		System.out.println(driver.getCurrentUrl());
 		click(pom.getOrderAndLogin().getLoginButton());
 		
 		
