@@ -132,7 +132,10 @@ public class Base {
 		return element;
 	}
 	
-
+	public static void waitNumberOfWindowsPresent(int noOfWindows) {
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		wait.until(ExpectedConditions.numberOfWindowsToBe(noOfWindows));
+	}
 	
 	public static void alertToBePresent(int time) {
 		WebDriverWait wait = new WebDriverWait(driver, time);
