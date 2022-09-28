@@ -26,7 +26,6 @@ public class AddToCartStepDef extends Base{
 		parent = driver.getWindowHandle();
 		products = pom.getAddToCart().getProducts();
 			click(products.get(0));
-			System.out.println(products.get(0).getAttribute("data-id"));
 			System.out.println(getTextInWebElement(products.get(0)));
 			productSelected = getTextInWebElement(products.get(0));
 		}
@@ -51,7 +50,12 @@ public class AddToCartStepDef extends Base{
 
 	@Then("user add that product to the cart")
 	public void user_add_that_product_to_the_cart() {
+		String selectedProductPrice = pom.getAddToCart().getSelectedProductPrice().getText();
+		System.out.println(selectedProductPrice);
 		click(pom.getAddToCart().getAddToCart());
+		String addedProductPrice = pom.getAddToCart().getAddedProductPrice().getText();
+		System.out.println(addedProductPrice);
+		assertEquals(selectedProductPrice, addedProductPrice);
 		
 
 	}

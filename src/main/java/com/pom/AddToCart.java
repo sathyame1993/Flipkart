@@ -20,7 +20,12 @@ public class AddToCart {
 	@FindBy(xpath = "//button[text()='ADD TO CART']")
 	private WebElement addToCart;
 	
-
+	@FindBy(xpath = "//div[@class='_30jeq3 _16Jk6d']")
+	private WebElement selectedProductPrice;
+	
+	@FindBy(xpath = "//span[@class='_2-ut7f _1WpvJ7']")
+	private WebElement addedProductPrice;
+	
 	public WebElement getAddToCart() {
 		return addToCart;
 	}
@@ -35,6 +40,16 @@ public class AddToCart {
 		return productDisplayed;
 	}
 
+
+
+	public WebElement getSelectedProductPrice() {
+		return selectedProductPrice;
+	}
+
+
+	public WebElement getAddedProductPrice() {
+		return addedProductPrice;
+	}
 
 
 	public AddToCart(WebDriver driver2) {
