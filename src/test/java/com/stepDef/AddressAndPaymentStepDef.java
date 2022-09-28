@@ -12,7 +12,7 @@ public class AddressAndPaymentStepDef extends Base{
 	
 	
 	@Given("user selects the address")
-	public void user_selects_the_address() throws InterruptedException {
+	public void user_selects_the_address()  {
 		elementToBeVisible(pom.getAddressAndPayment().getDeliverHere());
 		click(pom.getAddressAndPayment().getDeliverHere());
 	}
