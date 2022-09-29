@@ -6,7 +6,7 @@ Scenario: Launch the URL & Do a Product search
     Then user is navigated to list of realme mobile page 
     
  Scenario: Select any product & Add that to the cart
-     When user clicks the first mobile from the list
+     When user clicks the any mobile from the list
      And user should get the same product to be displayed that he clicked
      Then user add that product to the cart
     
@@ -20,4 +20,8 @@ Scenario: Launch the URL & Do a Product search
      Then clicks the continue to payment button
      And clicks the accept and continue button of popup
      Then selects the card payment option
+     
+ Scenario: Remove the product from the cart
+     Given user clicks the change button from order summary
+     Then clicks the remove option
      

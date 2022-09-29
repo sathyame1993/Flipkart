@@ -14,14 +14,14 @@ import io.cucumber.junit.CucumberOptions;
 		features = "C:\\Users\\sathiya\\eclipse-workspace\\scrum\\Flipkart\\src\\test\\resources\\com\\features",
 		glue = "com.stepDef",
 		monochrome = true,
-		plugin = "pretty",
+		plugin = { "pretty","html:target/flipkart.html"},
 		dryRun = false
 		
 		
 		)
 
 
-public class Runner extends Base {
+public class ChromeRunner extends Base {
 	public static WebDriver driver;
 	
 	@BeforeClass

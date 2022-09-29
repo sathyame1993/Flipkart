@@ -25,13 +25,13 @@ public class AddToCartStepDef extends Base{
 	
 	
 	
-	@When("user clicks the first mobile from the list")
-	public void user_clicks_the_first_mobile_from_the_list() {
+	@When("user clicks the any mobile from the list")
+	public void user_clicks_the_any_mobile_from_the_list() {
 		parent = driver.getWindowHandle();
 		products = pom.getAddToCart().getProducts();
-			click(products.get(0));
-			System.out.println(getTextInWebElement(products.get(0)));
-			productSelected = getTextInWebElement(products.get(0));
+			click(products.get(5));
+			System.out.println(getTextInWebElement(products.get(5)));
+			productSelected = getTextInWebElement(products.get(5));
 		}
 
 	@Then("user should get the same product to be displayed that he clicked")

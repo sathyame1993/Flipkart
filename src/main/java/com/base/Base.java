@@ -190,14 +190,13 @@ public class Base {
 	}
 
 	
-	public static void screenshot() {
+	public static void screenshot(String filename) {
 		TakesScreenshot screenshot = (TakesScreenshot) driver;
 		File source = screenshot.getScreenshotAs(OutputType.FILE);
-		File destination = new File("target/screenshot/"+Calendar.getInstance().getTimeInMillis()+".png");
+		File destination = new File("target/screenshot/"+filename+".png");
 		try {
 			FileUtils.copyFile(source, destination);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
