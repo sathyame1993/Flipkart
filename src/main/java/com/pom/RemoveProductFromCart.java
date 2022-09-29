@@ -1,5 +1,7 @@
 package com.pom;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +13,9 @@ public class RemoveProductFromCart {
 	
 	@FindBy(xpath = "(//div[text()='Order Summary']//following::div//following::button[@class='_32l7f0']")
 	private WebElement changeOrder;
+	
+	@FindBy(xpath = "//button[text()='Change']")
+	private List<WebElement> changeOptions;
 	
 	@FindBy(xpath = "//span[text()='Remove']")
 	private WebElement removeButton;
@@ -25,6 +30,12 @@ public class RemoveProductFromCart {
 
 	public WebElement getRemoveButton() {
 		return removeButton;
+	}
+
+
+
+	public List<WebElement> getChangeOptions() {
+		return changeOptions;
 	}
 
 

@@ -27,7 +27,6 @@ public class PlaceOrderAndLoginStepDef extends Base{
 	public void user_enters_the_password_and_login_to_application() throws InterruptedException {
 		elementToBeVisible(pom.getOrderAndLogin().getPassword());
 		sendKeys(pom.getOrderAndLogin().getPassword(), readPropertyFile().getProperty("password"));
-		System.out.println(driver.getCurrentUrl());
 		click(pom.getOrderAndLogin().getLoginButton());
 
 	}

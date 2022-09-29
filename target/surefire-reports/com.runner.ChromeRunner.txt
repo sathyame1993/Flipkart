@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.runner.ChromeRunner
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 122.429 s <<< FAILURE! - in com.runner.ChromeRunner
+Automate the Flipkart application for the following scenarios.Remove the product from the cart  Time elapsed: 0.849 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.click()" because "element" is null
+
