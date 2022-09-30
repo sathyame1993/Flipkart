@@ -2,18 +2,14 @@ package com.stepDef;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.List;
 import java.util.Set;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import com.base.Base;
 import com.sdp.PageObjectManager;
-
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 
 public class AddToCartStepDef extends Base{
 	

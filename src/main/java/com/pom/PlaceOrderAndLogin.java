@@ -25,11 +25,6 @@ public class PlaceOrderAndLogin {
 	private WebElement loginButton;
 	
 	
-	public WebDriver getDriver() {
-		return driver;
-	}
-
-
 	public WebElement getPlaceOrder() {
 		return placeOrder;
 	}

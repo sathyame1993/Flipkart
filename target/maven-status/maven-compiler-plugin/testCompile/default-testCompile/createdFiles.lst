@@ -1,8 +1,0 @@
-com\stepDef\ProductSearchStepDef.class
-com\stepDef\RemoveProductFromCartStepDef.class
-com\runner\ChromeRunner.class
-com\stepDef\PlaceOrderAndLoginStepDef.class
-com\stepDef\AddToCartStepDef.class
-com\sdp\PageObjectManager.class
-com\stepDef\Hooks.class
-com\stepDef\AddressAndPaymentStepDef.class

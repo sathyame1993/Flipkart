@@ -17,10 +17,14 @@ public class RemoveProductFromCart {
 	@FindBy(xpath = "//button[text()='Change']")
 	private List<WebElement> changeOptions;
 	
-	@FindBy(xpath = "//span[text()='Remove']")
+	@FindBy(xpath = "//*[@title='Flipkart']")
+	private WebElement homePage;
+	
+	@FindBy(xpath = "//*[text()='Cart']")
+	private WebElement goToCart;
+	
+	@FindBy(xpath = "//*[text()='Remove']")
 	private WebElement removeButton;
-	
-	
 	
 	public WebElement getChangeOrder() {
 		return changeOrder;
@@ -40,8 +44,20 @@ public class RemoveProductFromCart {
 
 
 
-	public RemoveProductFromCart(WebDriver driver4) {
-		this.driver = driver4;
+	public WebElement getHomePage() {
+		return homePage;
+	}
+
+
+
+	public WebElement getGoToCart() {
+		return goToCart;
+	}
+
+
+
+	public RemoveProductFromCart(WebDriver driver5) {
+		this.driver = driver5;
 	}
 
 }
