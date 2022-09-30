@@ -18,15 +18,9 @@ public class RemoveProductFromCartStepDef extends Base {
 	public void user_clicks_the_change_button_from_order_summary() throws InterruptedException  {
 				
 	List<WebElement> changeOptions = pom.getRemoveProductFromCart().getChangeOptions();
-		
-			click(changeOptions.get(2));
-
-		
+			click(changeOptions.get(2));	
 	}
-		
-//		elementToBeVisible(pom.getRemoveProductFromCart().getChangeOrder());
-//		click(pom.getRemoveProductFromCart().getChangeOrder());
-	
+
 
 	@Then("clicks the remove option")
 	public void clicks_the_remove_option() {
