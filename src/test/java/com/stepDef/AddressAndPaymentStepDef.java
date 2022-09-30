@@ -35,7 +35,7 @@ public class AddressAndPaymentStepDef extends Base{
 		Thread.sleep(7000);
 		scrollDownToElement(pom.getAddressAndPayment().getCardPatmnetOption());
 		click(pom.getAddressAndPayment().getCardPatmnetOption());
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 	}
 
 	

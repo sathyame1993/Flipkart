@@ -1,5 +1,9 @@
 package com.stepDef;
 
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+
 import com.base.Base;
 import com.sdp.PageObjectManager;
 import io.cucumber.java.en.Given;
@@ -12,10 +16,17 @@ public class RemoveProductFromCartStepDef extends Base {
 
 	@Given("user clicks the change button from order summary")
 	public void user_clicks_the_change_button_from_order_summary() throws InterruptedException  {
+				
+	List<WebElement> changeOptions = pom.getRemoveProductFromCart().getChangeOptions();
 		
-		elementToBeClickable(pom.getRemoveProductFromCart().getChangeOrder());
-		click(pom.getRemoveProductFromCart().getChangeOrder());
+			click(changeOptions.get(2));
+
+		
 	}
+		
+//		elementToBeVisible(pom.getRemoveProductFromCart().getChangeOrder());
+//		click(pom.getRemoveProductFromCart().getChangeOrder());
+	
 
 	@Then("clicks the remove option")
 	public void clicks_the_remove_option() {

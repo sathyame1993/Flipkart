@@ -12,10 +12,10 @@ public class RemoveProductFromCart {
 	WebDriver driver ;
 	
 	
-	@FindBy(xpath = "(//div[text()='Order Summary']//following::div//following::button[@class='_32l7f0']")
+	@FindBy(xpath = "((//button[@class='_32l7f0'])[3]")
 	private WebElement changeOrder;
 	
-	@FindBy(xpath = "//button[text()='Change']")
+	@FindBy(xpath = "//button[@class='_32l7f0']")
 	private List<WebElement> changeOptions;
 	
 	@FindBy(xpath = "//*[@title='Flipkart']")
