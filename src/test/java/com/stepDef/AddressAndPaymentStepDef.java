@@ -2,49 +2,73 @@ package com.stepDef;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-
 import com.base.Base;
 import com.sdp.PageObjectManager;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
 public class AddressAndPaymentStepDef extends Base{
 
 	PageObjectManager pom = new PageObjectManager();
-	
-	
+	WebElement clickAndHoldElement ;
+
 	@Given("user selects the address")
 	public void user_selects_the_address()  {
-		elementIsPresent(By.xpath("//div[@id='px-captcha']"));
-		WebElement clickAndHoldElement = driver.findElement(By.xpath("//div[@id='px-captcha']"));
-		Actions ac = new Actions(driver);
-		ac.clickAndHold(clickAndHoldElement).build().perform();
-		System.out.println("The click and hold button is clicked successfully");
-		elementToBeVisible(pom.getAddressAndPayment().getDeliverHere());
-		click(pom.getAddressAndPayment().getDeliverHere());
+		implicityWaitTime(60);
+		clickAndHoldElement = driver.findElement(By.xpath("//div[@id='px-captcha']"));
+		//			Actions ac = new Actions(driver);
+		//			ac.clickAndHold(clickAndHoldElement).build().perform();
+		//			System.out.println("The click and hold button is clicked successfully");
+		if(clickAndHoldElement.isEnabled()==true) {
+			System.out.println("The human verification cannot be automated and also the shadowroot element cannot be handled");
+			screenshot("Failed-Due to Human Verification");
+		}
+		else {
+			elementToBeVisible(pom.getAddressAndPayment().getDeliverHere());
+			click(pom.getAddressAndPayment().getDeliverHere());
+		}
+
 	}
 
 	@Then("clicks the continue to payment button")
 	public void clicks_the_continue_to_payment_button() {
-		elementToBeVisible(pom.getAddressAndPayment().getContinueToPayment());
-		scrollDownToElement(pom.getAddressAndPayment().getContinueToPayment());
-		click(pom.getAddressAndPayment().getContinueToPayment());
+		if(clickAndHoldElement.isEnabled()==true) {
+			System.out.println("The selenium is detected by flipkart and the automation is blocked by the applicaiton ");
+		}
+		
+		else
+		{
+			elementToBeVisible(pom.getAddressAndPayment().getContinueToPayment());
+			scrollDownToElement(pom.getAddressAndPayment().getContinueToPayment());
+			click(pom.getAddressAndPayment().getContinueToPayment());
+		}
+
 	}
 
 	@Then("clicks the accept and continue button of popup")
-	public void clicks_the_accept_and_continue_button_of_popup() throws InterruptedException {
-		elementToBeVisible(pom.getAddressAndPayment().getAcceptPopup());
-		click(pom.getAddressAndPayment().getAcceptPopup());
+	public void clicks_the_accept_and_continue_button_of_popup()  {
+		
+		if(clickAndHoldElement.isEnabled()==true) {
+			System.out.println("The automation is blocked by the application");
+		}else {
+			elementToBeVisible(pom.getAddressAndPayment().getAcceptPopup());
+			click(pom.getAddressAndPayment().getAcceptPopup());
+		}
+
 	}
 
 	@Then("selects the card payment option")
-	public void selects_the_card_payment_option() throws InterruptedException {
-		elementToBeVisible(pom.getAddressAndPayment().getCardPatmnetOption());
-		scrollDownToElement(pom.getAddressAndPayment().getCardPatmnetOption());
-		click(pom.getAddressAndPayment().getCardPatmnetOption());
+	public void selects_the_card_payment_option()  {
+		
+		if(clickAndHoldElement.isEnabled()==true) {
+			System.out.println("This step cannot be performed as the previous step is blocked by the application ");
+		}else {
+			elementToBeVisible(pom.getAddressAndPayment().getCardPaymnetOption());
+			scrollDownToElement(pom.getAddressAndPayment().getCardPaymnetOption());
+			click(pom.getAddressAndPayment().getCardPaymnetOption());
+		}
+
 	}
 
-	
+
 }

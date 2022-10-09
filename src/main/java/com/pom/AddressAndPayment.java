@@ -24,7 +24,7 @@ public class AddressAndPayment {
 	private WebElement acceptPopup;
 	
 	@FindBy(xpath = "//label[@for=\"CREDIT\"]")
-	private WebElement cardPatmnetOption;
+	private WebElement cardPaymnetOption;
 
 
 	public WebElement getSelectAddress() {
@@ -43,8 +43,8 @@ public class AddressAndPayment {
 		return acceptPopup;
 	}
 
-	public WebElement getCardPatmnetOption() {
-		return cardPatmnetOption;
+	public WebElement getCardPaymnetOption() {
+		return cardPaymnetOption;
 	}
 	
 	public AddressAndPayment(WebDriver driver4) {

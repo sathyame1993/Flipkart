@@ -1,5 +1,6 @@
 package com.runner;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -29,4 +30,8 @@ public class ChromeRunner extends Base {
 		driver = browser_launch(readPropertyFile().getProperty("browser"));
 	}
 
+	@AfterClass
+	public static void tearOff() {
+		quit();
+	}
 }

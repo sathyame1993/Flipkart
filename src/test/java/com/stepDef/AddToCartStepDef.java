@@ -25,9 +25,9 @@ public class AddToCartStepDef extends Base{
 	public void user_clicks_the_any_mobile_from_the_list() {
 		parent = driver.getWindowHandle();
 		products = pom.getAddToCart().getProducts();
-			click(products.get(3));
-			System.out.println("The selected product is : "+getTextInWebElement(products.get(3)));
-			productSelected = getTextInWebElement(products.get(3));
+			click(products.get(5));
+			System.out.println("The selected product is : "+getTextInWebElement(products.get(5)));
+			productSelected = getTextInWebElement(products.get(5));
 		}
 
 	@Then("user should get the same product to be displayed that he clicked")
