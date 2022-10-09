@@ -15,7 +15,7 @@ public class ProductSearch {
 	@FindBy(xpath = "//button[@class=\"_2KpZ6l _2doB4z\"]")
 	private WebElement closePopup;
 	
-	@FindBy(linkText = "Mobiles & Tablets")
+	@FindBy(partialLinkText = "Mobiles")
 	private WebElement mobilesCategory;
 	
 	@FindBy(xpath = "//span[@class=\"_2I9KP_\"][text()=\"Electronics\"]")

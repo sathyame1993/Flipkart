@@ -14,6 +14,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -32,7 +33,8 @@ public class Base {
 	
 	public static Properties readPropertyFile() {
 		try {
-			FileInputStream fileInputStream = new FileInputStream("C:\\Users\\sathiya\\eclipse-workspace\\scrum\\Flipkart\\src\\test\\resources\\com\\properties\\config.properties");
+			FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir")+
+					"/src/test/resources/com/properties/config.properties");
 			properties = new Properties();
 			try {
 				properties.load(fileInputStream);
@@ -47,10 +49,15 @@ public class Base {
 	}
 
 	public static WebDriver browser_launch(String browserName) {
+		
+
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--start-maximized");
+			options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"}); 
 		try {
 			if (browserName.equalsIgnoreCase("chrome")) {
 				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();
+				driver = new ChromeDriver(options);
 			}else if (browserName.equalsIgnoreCase("ie")) {
 				WebDriverManager.iedriver().setup();
 				driver= new InternetExplorerDriver();
@@ -63,7 +70,7 @@ public class Base {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		driver.manage().window().maximize();
+//		driver.manage().window().maximize();
 		return driver;
 	}
 

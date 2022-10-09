@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "C:\\Users\\sathiya\\eclipse-workspace\\scrum\\Flipkart\\src\\test\\resources\\com\\features",
+		features = "src/test/resources/com/features/",
 		glue = "com.stepDef",
 		monochrome = true,
 		plugin = { "pretty","html:target/flipkart.html"},
@@ -26,7 +26,7 @@ public class ChromeRunner extends Base {
 	
 	@BeforeClass
 	public static void setup() {
-		driver = browser_launch(readPropertyFile().getProperty("browser1"));
+		driver = browser_launch(readPropertyFile().getProperty("browser"));
 	}
 
 }

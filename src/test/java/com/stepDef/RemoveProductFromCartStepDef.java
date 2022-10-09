@@ -2,6 +2,7 @@ package com.stepDef;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.base.Base;
@@ -16,9 +17,9 @@ public class RemoveProductFromCartStepDef extends Base {
 
 	@Given("user clicks the change button from order summary")
 	public void user_clicks_the_change_button_from_order_summary() throws InterruptedException  {
-				
-	List<WebElement> changeOptions = pom.getRemoveProductFromCart().getChangeOptions();
-			click(changeOptions.get(2));	
+		elementIsPresent(By.xpath("//button[@class='_32l7f0']"));
+		List<WebElement> changeOptions = pom.getRemoveProductFromCart().getChangeOptions();
+		click(changeOptions.get(2));	
 	}
 
 

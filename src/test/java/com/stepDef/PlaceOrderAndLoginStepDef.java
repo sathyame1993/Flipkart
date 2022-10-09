@@ -1,19 +1,16 @@
 package com.stepDef;
+
 import com.base.Base;
 import com.sdp.PageObjectManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
+public class PlaceOrderAndLoginStepDef extends Base {
 
-
-public class PlaceOrderAndLoginStepDef extends Base{
-	
 	PageObjectManager pom = new PageObjectManager();
-	
-	
-	
+
 	@Given("user clicks the place order button")
-	public void user_clicks_the_place_order_button() {
+	public void user_clicks_the_place_order_button() throws InterruptedException {
 		click(pom.getOrderAndLogin().getPlaceOrder());
 	}
 
@@ -28,6 +25,5 @@ public class PlaceOrderAndLoginStepDef extends Base{
 		elementToBeVisible(pom.getOrderAndLogin().getPassword());
 		sendKeys(pom.getOrderAndLogin().getPassword(), readPropertyFile().getProperty("password"));
 		click(pom.getOrderAndLogin().getLoginButton());
-
 	}
 }
