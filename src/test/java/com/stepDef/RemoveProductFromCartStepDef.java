@@ -18,7 +18,7 @@ public class RemoveProductFromCartStepDef extends Base {
 	@Given("user clicks the change button from order summary")
 	public void user_clicks_the_change_button_from_order_summary() throws InterruptedException  {
 		if(clickAndHoldElement.isEnabled()==true) {
-			System.out.println("The application blocked the automation and this step could not be executed");
+			Hooks.scenario.log("This step cannot be performed as the previous step is failed");
 		}
 		else {
 			List<WebElement> changeOptions = pom.getRemoveProductFromCart().getChangeOptions();
@@ -33,7 +33,7 @@ public class RemoveProductFromCartStepDef extends Base {
 		
 		
 		if(clickAndHoldElement.isEnabled()==true) {
-			System.out.println("The automation is blocked by the application");
+			Hooks.scenario.log("This step cannot be performed as the previous step is failed");
 		}
 		else {
 			elementToBeVisible(pom.getRemoveProductFromCart().getRemoveButton());

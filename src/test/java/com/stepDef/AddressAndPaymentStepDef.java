@@ -20,8 +20,8 @@ public class AddressAndPaymentStepDef extends Base{
 		//			ac.clickAndHold(clickAndHoldElement).build().perform();
 		//			System.out.println("The click and hold button is clicked successfully");
 		if(clickAndHoldElement.isEnabled()==true) {
-			System.out.println("The human verification cannot be automated and also the shadowroot element cannot be handled");
-			screenshot("Failed-Due to Human Verification");
+			Hooks.scenario.attach(attachScreenshot(), "image/png", "Failed-Due to Human Verification");
+			Hooks.scenario.log("The human verification is showing.This cannot be automated");
 		}
 		else {
 			elementToBeVisible(pom.getAddressAndPayment().getDeliverHere());
@@ -33,7 +33,7 @@ public class AddressAndPaymentStepDef extends Base{
 	@Then("clicks the continue to payment button")
 	public void clicks_the_continue_to_payment_button() {
 		if(clickAndHoldElement.isEnabled()==true) {
-			System.out.println("The selenium is detected by flipkart and the automation is blocked by the applicaiton ");
+			Hooks.scenario.log("The selenium is detected by flipkart and the automation is blocked by the applicaiton ");
 		}
 		
 		else
@@ -49,7 +49,7 @@ public class AddressAndPaymentStepDef extends Base{
 	public void clicks_the_accept_and_continue_button_of_popup()  {
 		
 		if(clickAndHoldElement.isEnabled()==true) {
-			System.out.println("The automation is blocked by the application");
+			Hooks.scenario.log("This step cannot be performed as the previous step is failed");
 		}else {
 			elementToBeVisible(pom.getAddressAndPayment().getAcceptPopup());
 			click(pom.getAddressAndPayment().getAcceptPopup());
@@ -61,7 +61,7 @@ public class AddressAndPaymentStepDef extends Base{
 	public void selects_the_card_payment_option()  {
 		
 		if(clickAndHoldElement.isEnabled()==true) {
-			System.out.println("This step cannot be performed as the previous step is blocked by the application ");
+			Hooks.scenario.log("This step cannot be performed as the previous step is failed");
 		}else {
 			elementToBeVisible(pom.getAddressAndPayment().getCardPaymnetOption());
 			scrollDownToElement(pom.getAddressAndPayment().getCardPaymnetOption());

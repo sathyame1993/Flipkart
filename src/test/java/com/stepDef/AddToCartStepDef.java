@@ -17,7 +17,7 @@ public class AddToCartStepDef extends Base{
 	List<WebElement> products;
 	public static String parent;
 	String productSelected;
-	
+	String productDisplayed;
 	
 	
 	
@@ -26,8 +26,8 @@ public class AddToCartStepDef extends Base{
 		parent = driver.getWindowHandle();
 		products = pom.getAddToCart().getProducts();
 			click(products.get(5));
-			System.out.println("The selected product is : "+getTextInWebElement(products.get(5)));
 			productSelected = getTextInWebElement(products.get(5));
+			Hooks.scenario.log("The selected product is : "+productSelected);
 		}
 
 	@Then("user should get the same product to be displayed that he clicked")
@@ -42,9 +42,10 @@ public class AddToCartStepDef extends Base{
 			}
 		}
 		elementToBeVisible(pom.getAddToCart().getproductDisplayed());
-		String productDisplayed =pom.getAddToCart().getproductDisplayed().getAttribute("title");
-		System.out.println("The Product displayed is : "+productDisplayed);
+		productDisplayed =pom.getAddToCart().getproductDisplayed().getAttribute("title");
+		Hooks.scenario.log("The Product displayed is : "+productDisplayed);
 		assertEquals(productSelected, productDisplayed);
+		Hooks.scenario.log("The Product selected and Product displayed are same");
 		
 	}
 
@@ -52,11 +53,12 @@ public class AddToCartStepDef extends Base{
 	public void user_add_that_product_to_the_cart() {
 		elementToBeVisible(pom.getAddToCart().getSelectedProductPrice());
 		String selectedProductPrice = pom.getAddToCart().getSelectedProductPrice().getText();
-		System.out.println("Selected Product Price is : "+selectedProductPrice);
+		Hooks.scenario.log("The price of selected product is  : "+selectedProductPrice);
 		click(pom.getAddToCart().getAddToCart());
 		String addedProductPrice = pom.getAddToCart().getAddedProductPrice().getText();
-		System.out.println("The price of the product added in the cart : "+addedProductPrice);
+		Hooks.scenario.log("The price of the product added in the cart : "+addedProductPrice);
 		assertEquals(selectedProductPrice, addedProductPrice);
+		Hooks.scenario.log("Both the price are same");
 		
 
 	}

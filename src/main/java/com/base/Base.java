@@ -205,6 +205,12 @@ public class Base {
 			e.printStackTrace();
 		}
 	}
+	
+	public static byte[] attachScreenshot() {
+		TakesScreenshot screenshot = (TakesScreenshot) driver;
+		byte[] source = screenshot.getScreenshotAs(OutputType.BYTES);
+		return source;
+	}
 	public static void clickAndHold(WebElement element) {
 		actions.clickAndHold(element).build().perform();
 	}
